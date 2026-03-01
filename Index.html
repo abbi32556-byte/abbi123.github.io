@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Picks UK | Smart Buying Guides</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#f3f4f6;color:#111827}
+header{background:#111827;color:#fff;padding:20px 8%;display:flex;justify-content:space-between;align-items:center}
+header h1{font-size:22px}
+nav a{color:#d1d5db;margin-left:20px;text-decoration:none;font-size:14px}
+.hero{background:linear-gradient(135deg,#1f2937,#111827);color:#fff;padding:80px 8%;text-align:center}
+.hero h2{font-size:40px;margin-bottom:15px}
+.hero p{color:#cbd5e1;margin-bottom:25px}
+.container{max-width:1200px;margin:auto;padding:60px 8%}
+.section-title{text-align:center;font-size:28px;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.card{background:#fff;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.05);padding:20px;transition:0.3s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;border-radius:8px;margin-bottom:15px}
+.card h3{font-size:18px;margin-bottom:10px}
+.card p{font-size:14px;color:#4b5563;margin-bottom:15px}
+.rating{color:#f59e0b;margin-bottom:10px}
+.btn{display:inline-block;background:#2563eb;color:#fff;padding:9px 16px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600}
+.blog-section{background:#e5e7eb;padding:60px 8%}
+.blog-post{background:#fff;padding:25px;border-radius:10px;margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05)}
+footer{background:#111827;color:#9ca3af;text-align:center;padding:30px;font-size:13px}
+@media(max-width:768px){.hero h2{font-size:30px}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Prime Picks UK</h1>
+<nav>
+<a href="#products">Products</a>
+<a href="#blog">Blog</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Best Product Reviews For UK Buyers</h2>
+<p>We compare top-rated products available in the UK market to help you make the right choice.</p>
+</section>
+
+<div class="container" id="products">
+<h2 class="section-title">Top Rated Products</h2>
+<div class="grid" id="product-container"></div>
+</div>
+
+<section class="blog-section" id="blog">
+<h2 class="section-title">Latest Buying Guides</h2>
+<div class="container">
+<div class="blog-post">
+<h3>Best Home & Tech Products in the UK (2026 Guide)</h3>
+<p>Complete comparison guide for trending UK products based on research and customer reviews.</p>
+</div>
+</div>
+</section>
+
+<footer>
+<p>This website contains affiliate links. We may earn a commission at no extra cost to you.</p>
+<p>© 2026 Prime Picks UK</p>
+</footer>
+
+<script>
+const products = [
+...Array.from({length:20}, (_,i) => ({
+name: `Top Rated UK Product ${i+1}`,
+image: "https://via.placeholder.com/400x250",
+description: "High quality product popular among UK buyers. Trusted performance and value for money.",
+rating: "★★★★★",
+link: "YOUR_AFFILIATE_LINK_HERE"
+}))
+];
+
+const container = document.getElementById('product-container');
+
+products.forEach(product => {
+container.innerHTML += `
+<div class="card">
+<img src="${product.image}" alt="Product">
+<h3>${product.name}</h3>
+<div class="rating">${product.rating}</div>
+<p>${product.description}</p>
+<a href="${product.link}" target="_blank" class="btn">Check Price</a>
+</div>
+`;
+});
+</script>
+
+</body>
+</html>
